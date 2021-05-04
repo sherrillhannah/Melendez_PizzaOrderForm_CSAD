@@ -1,0 +1,252 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<link rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Pizza Order form</title>
+	<style type="text/css">
+		body{
+			background-color: #FF6767;
+			font-family: comic sans ms; 
+			font-size: 1.15em;
+			color:black;
+		}
+		fieldset{
+		border: 20px solid #FFD675;
+		background-color: white;
+		opacity: 1;
+		 }
+		#picss{
+		padding:20px;
+		}
+		button{
+			border: none;
+			color: black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			background-color: #FAEAA5;
+			border-radius: 80px;
+			}
+		.pad{
+		 margin:100px;
+		 padding: 80px;
+		 width:700px;
+		 { 
+		
+		
+		
+		
+</style>
+</head>
+<body>
+    <!--MELENDEZ, SHERRILL HANNAH-->
+    <!--04/27/2021-->
+	<center>
+	<fieldset class="pad">
+	<img src="MELENDEZ_IMAGES_CSAD/pizza.png" alt="logo" height="200" width="500">
+	<p>"Home of the best Pizza, Fries and Burgers in town"<br>
+		<b>311 Rodriguez Building, España Blvd, Manila <br>
+		(02) 77777</b></p>
+	
+	<br>
+	<div class="picc" id="picss">
+	<div class="picSlide">
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/pizza2.jpg" width="320" height="500"> 
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/burger.jpg" width="320" height="500">
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/fries.jpg" width="320" height="500">
+    <button class="leftSlide" onclick="plusDivs(-1)">< Previous</button>
+    <button class="rightSlide" onclick="plusDivs(1)">Next ></button>
+	<span class="imgSlide img-white" onclick="currentDiv(1)"></span>
+    <span class="imgSlide img-white" onclick="currentDiv(2)"></span>
+    <span class="imgSlide img-white" onclick="currentDiv(3)"></span>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("imgSlide");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace("img-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " img-white";
+}
+</script>
+<hr>
+	<form>
+	<h3>Order form:</h3>
+	
+	<label><b>Pizza</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Shekiss supreme</option>
+		<option>Shekiss hawaiian</option>
+		<option>Shekiss all meat</option>
+		</select>
+	<br>
+	<br>
+	<label><b>Choice of bread(choose only one):</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>thin-crust</option>
+		<option>hand-tossed</option>
+		</select>
+	<br>
+	<label>Quantity:</label>
+	<input type="text" id="qty1" />
+	<br>
+	<br>
+	<hr>
+	<label><b>Burger:</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Single patty</option>
+		<option>Double patty</option>
+		</select>
+	<br>
+	<br>
+	<label><b>Choice of bun (choose only one):</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>White bun</option>
+		<option>Wheat bun</option>
+		</select>
+	<br>
+	<br>
+	<label><b>Choice of filling (choose as many as you can):</b></label>
+	<p>
+	<input type="checkbox" id="burg" /> Cheese
+	<input type="checkbox" id="burg" /> Tomato
+	<input type="checkbox" id="burg" /> Coleslaw
+	<input type="checkbox" id="burg" /> Onion
+	<input type="checkbox" id="burg" /> Cucumber
+	<input type="checkbox" id="burg" /> Bacon</p>
+	<br>
+	<label>Quantity:</label>
+	<input type="text" id="qty1" />
+	<br>
+	<br>
+	<hr>
+	<label><b>Pasta</b></label>
+	<br>
+	<label><b>Choose your sauce:</b></label>
+	<br>
+	
+	<select>
+		<option>none</option>
+		<option>Pesto</option>
+		<option>Spaghetti</option>
+		<option>Carbonara</option>
+		</select>
+	<br>
+	<br>
+	<label><b>Add ons:</b></label>
+	<br>
+	<p>
+	<input type="checkbox" id="sau" /> Extra sauce
+	<input type="checkbox" id="sau" /> Extra cheese</p>
+	<br>
+	<label>Quantity:</label>
+	<input type="text" id="qty2" />
+	<br>
+	<br>
+	<hr>
+	<label><b>Fries</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Cheese</option>
+		<option>Sourcream</option>
+		<option>Barbeque</option>
+		<option>Sourcheese</option>
+		</select>
+	<br>
+	<br>
+	<label><b>Sizes:</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Small</option>
+		<option>Medium</option>
+		<option>Large</option>
+		<option>Extra large</option>
+		</select>
+	<br>
+	<br>
+	<label>Quantity:</label>
+	<input type="text" id="qty3" />
+	<br>
+	<br>
+	<hr>
+	<label><b>Drinks</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Coke</option>
+		<option>Sprite</option>
+		<option>7up</option>
+		<option>Rootbeer</option>
+		<option>Pepsi</option>
+		<option>Mountain dew</option>
+	</select>
+	<br>
+	<br>
+	<label><b>Sizes:</b></label>
+	<br>
+	<select>
+		<option>none</option>
+		<option>Small</option>
+		<option>Medium</option>
+		<option>Large</option>
+		<option>Extra large</option>
+	</select>
+	<br>
+	<br>
+	<label>Quantity:</label>
+	<input type="text" id="qty4" />
+	<br>
+	<br>
+	<hr>
+	<p>
+	<label><b>Note/s:</b></label></p>
+	<p>
+	<textarea id="notes2" rows="10" cols="40"></textarea>
+	</p>
+	<p>
+	<input type="radio" id="sau" /> Pick-up
+	<input type="radio" id="sau" /> Delivery</p>
+	</div>
+	</form>
+	<a href="MELENDEZ_pizzaOrderFormHOME_CSAD.html" target="newWin"><button>Back</button></a>
+	<button>Submit</button>
+	</fieldset>
+	</div>
+	</center>
+</body>
+</html>

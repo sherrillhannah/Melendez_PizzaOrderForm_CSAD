@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<link rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Pizza Order form</title>
+	<style type="text/css">
+		body{
+			background-color: #FF6767;
+			font-family: comic sans ms; 
+			font-size: 1.15em;
+			color:black;
+		}
+		fieldset{
+		border: 20px solid #FFD675;
+		background-color: white;
+		opacity: 1;
+		margin:100px;
+		 padding: 80px;
+		 width:700px;
+		 }
+		#picss{
+		padding:20px;
+		}
+		.picc,.tabl{
+		display:table-cell;
+		vertical-align:middle;
+		}
+		button{
+			border: none;
+			color: black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			background-color: #FAEAA5;
+			border-radius: 80px;
+			}
+		.pad{
+		 margin:100px;
+		 padding: 80px;
+		 width:720px;
+		 { 
+		
+		
+		
+</style>
+</head>
+<body>
+    <!--MELENDEZ, SHERRILL HANNAH-->
+    <!--04/27/2021-->
+	<center>
+	<fieldset>
+	<img src="MELENDEZ_IMAGES_CSAD/pizza.png" alt="logo" height="200" width="500">
+	<p>"Home of the best Pizza, Fries and Burgers in town"<br>
+		<b>311 Rodriguez Building, España Blvd, Manila <br>
+		(02) 77777</b></p>
+	
+	<br>
+	<div class="picc" id="picss">
+	<div class="picSlide">
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/pizza2.jpg" width="320" height="500"> 
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/burger.jpg" width="320" height="500">
+	<img class="mySlides" src="MELENDEZ_IMAGES_CSAD/fries.jpg" width="320" height="500">
+    <button class="leftSlide" onclick="plusDivs(-1)">< Previous</button>
+    <button class="rightSlide" onclick="plusDivs(1)">Next ></button>
+	<span class="imgSlide img-white" onclick="currentDiv(1)"></span>
+    <span class="imgSlide img-white" onclick="currentDiv(2)"></span>
+    <span class="imgSlide img-white" onclick="currentDiv(3)"></span>
+</div>
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("imgSlide");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace("img-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " img-white";
+}
+</script>
+<div class="tabl">
+<form>
+	<h3>Customer's Details:</h3>
+	<p>
+	<label>Full Name:</label>
+	<input type="text" id="fullName" />
+	<br>
+	<label>Complete Address:</label>
+	<input type="text" id="txtName" />
+	<br>
+	<label>Contact number:</label>
+	<input type="text" id="number" />
+	<br>
+	<label>Email Address:</label>
+	<input type="email" id="emailAddress" />
+	<br>
+	</p>
+	<p>
+	<label>Landmark/s:</label></p>
+	<p>
+	<textarea id="notes" rows="10" cols="30"></textarea>
+	</p>
+	</form>
+	<a href="MELENDEZ_pizzaOrderForm_CSAD.html" target="newWin"><button>Submit</button></a>
+	</div>
+	</fieldset>
+	</center>
+</body>
+</html>
